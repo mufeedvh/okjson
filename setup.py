@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-	# package
+    # package
     name = 'okjson',
     packages = find_packages(include=['okjson']),
     install_requires = ['orjson'],
@@ -11,7 +11,10 @@ setup(
 
     # metadata
     version = '0.1.0',
-    description = 'Fast and strongly typed JSON Schema validator for Python.',
+    description = 'A fast, simple, and pythonic JSON Schema Validator.',
     author = 'Mufeed VH',
-    license = 'MIT',
+    author_email = 'contact@mufeedvh.com',
+    url = 'https://github.com/mufeedvh/okjson',
+    keywords = ['json', 'schema', 'jsonschema', 'validation'],
+    license = 'MIT'
 )
