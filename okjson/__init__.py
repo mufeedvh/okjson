@@ -1,0 +1,1 @@
+from okjson.validator import JSONValidator
