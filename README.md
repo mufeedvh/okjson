@@ -1,5 +1,5 @@
 <div align="center">
-    <h1><code>okjson</code></h1>
+    <h1>{ <code>okjson</code> }</h1>
     <p>A fast, simple, and pythonic JSON Schema Validator</p>
     <a href="#usage">Usage</a> • <a href="#install">Install</a> • <a href="#features">Features</a> • <a href="#benchmarks">Benchmarks</a> • <a href="#license">License</a>
 </div>
