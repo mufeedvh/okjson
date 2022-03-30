@@ -78,7 +78,7 @@ assert JSONValidator().validate(instance=json_string, schema=schema)
 
 Got a large schema to make? Just call the `create_schema()` function on a valid JSON file that follows the desired schema.
 
-**NOTE:** This currently does not validate nested dictionaries!
+**⚠️ NOTE:** This currently does not validate nested dictionaries!
 
 ```py
 from okjson import JSONValidator
