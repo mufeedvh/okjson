@@ -7,7 +7,7 @@
 ## Install
 
 ```
-$ pip install okjson
+$ pip install okjson==0.1.1
 ```
 
 **⚠️ NOTE:** This library has not been battle-tested, please don't use this in production. yet.
