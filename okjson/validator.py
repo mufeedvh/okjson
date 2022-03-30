@@ -148,11 +148,12 @@ class JSONValidator:
       # checks if the data type matches that of the defined schema
       if not self.loosely_typed:
         schema_type = type(schema[key])
-        allowed_dtypes = (type(type), dict, list)
+        nested_dtypes = (type(type), dict, list)
+        value_dtypes = (str, int, float, bool)
         skip_ctx = False
 
         # verify that the schema is defined as datatype values
-        if schema_type in allowed_dtypes or callable(schema[key]):
+        if schema_type in nested_dtypes:
           if type(value) == schema[key]: continue
 
           if schema_type == dict:
@@ -190,19 +191,7 @@ class JSONValidator:
                     'but encountered `{}`.'.format(expected_type, key, dtype)
                 )
 
-          # handle function calls (like regex match function for example)
-          elif callable(schema[key]):
-            # execute the function if it returns true, it passes the validation
-            # if it's an exception returning function, it will fail anyway.
-            if schema[key](value): continue
-            else:
-              raise DidNotPassFunction('Value `{}` did not pass the function `{}()` [{}].'.format(
-                value,
-                schema[key].__name__,
-                schema[key]
-              ))
-
-        else:
+        elif schema_type in value_dtypes:
           # to retrieve function type
           def function(): pass
 
@@ -213,6 +202,18 @@ class JSONValidator:
             raise InvalidSchema(
               'Schema definition expected `{}` but encountered `{}`.'.format(schema[key], value)
             )
+            
+        # handle function calls (like regex match function for example)
+        elif callable(schema[key]):
+          # execute the function if it returns true, it passes the validation
+          # if it's an exception returning function, it will fail anyway.
+          if schema[key](value): continue
+          else:
+            raise DidNotPassFunction('Value `{}` did not pass the function `{}()` [{}].'.format(
+              value,
+              schema[key].__name__,
+              schema[key]
+            ))        
 
         if not skip_ctx and type(value) is not schema[key]:
           if schema_type == type(type): schema_type = schema[key]
