@@ -13,14 +13,14 @@ setup(
     test_suite = 'tests',
 
     # metadata
-    version = '0.1.0',
+    version = '0.1.1',
     description = 'A fast, simple, and pythonic JSON Schema Validator.',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     author = 'Mufeed VH',
     author_email = 'contact@mufeedvh.com',
     url = 'https://github.com/mufeedvh/okjson',
-    download_url = 'https://github.com/mufeedvh/okjson/archive/refs/tags/v0.1.0.tar.gz',
+    download_url = 'https://github.com/mufeedvh/okjson/archive/refs/tags/v0.1.1.tar.gz',
     keywords = ['json', 'schema', 'jsonschema', 'validation', 'validator'],
     license = 'MIT',
     classifiers = [
