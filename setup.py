@@ -15,6 +15,7 @@ setup(
     author = 'Mufeed VH',
     author_email = 'contact@mufeedvh.com',
     url = 'https://github.com/mufeedvh/okjson',
+    download_url = 'https://github.com/mufeedvh/okjson/archive/refs/tags/v0.1.0.tar.gz',
     keywords = ['json', 'schema', 'jsonschema', 'validation', 'validator'],
     license = 'MIT'
 )
