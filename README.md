@@ -16,7 +16,7 @@ $ pip install okjson==0.1.1
 
 - **Simplicity:** The schema definition is pythonic in the sense that you can directly specify the expected data type with the corresponding keyword. This is inspired by the design of [tiangolo/sqlmodel](https://github.com/tiangolo/sqlmodel).
 - **Performance:** Just 250ish lines of simple and optimized code, performs better than the alternatives simply because it does relatively less work. It also uses [orjson](https://github.com/ijl/orjson) under the hood for serialization if you're providing a raw JSON string as input.  (See [Benchmarks](#benchmarks))
-- **Composability:** You can write your own validation function for values, all it has to do is return `True` on a valid input just like the `regex` example below. (See [Usage](https://github.com/mufeedvh/okjson_bak#every-feature-in-a-single-example))
+- **Composability:** You can write your own validation function for values, all it has to do is return `True` on a valid input just like the `regex` example below. (See [Usage](#every-feature-in-a-single-example))
 - **Options:** The `max_size_in_bytes` option allows you to prevent processing large payloads (in web/network scenarios) and you can opt out of data type validation with the `loosely_typed` option.
 - **Helpful Error Messages:** The `validate()` function prints out helpful exception messages for easier debugging.
 
