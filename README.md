@@ -38,7 +38,7 @@ assert JSONValidator().is_valid(instance=json_string, schema=schema)
 
 ### Every feature in a single example:
 
-For any schema that includes inner dictonaries/lists or cusom validation functions, use the `validate()` method instead.
+For any schema that includes inner dictonaries/lists or cusom validation functions, use the `validate()` method instead. This method also has well defined error messages for each exception cases.
 
 **Tip:** Just like how the regex match function is utilized in this example, you can compose any function, all that's required is that it returns `True` if it passes the validation.
 
